@@ -8,53 +8,15 @@ body {
     color: #ffffff;
 }
 
-header {
-    background: #0f0f1a;
-    padding: 1rem 0;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+/* Cover Image */
+.cover-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-bottom: 5px solid #ff6b6b;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ff6b6b;
-}
-
-.section-dark {
-    background: linear-gradient(135deg, #2a2a40, #3a3a5a);
-    padding: 2rem;
-    margin: 1rem 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.section-light {
-    background: linear-gradient(135deg, #3a3a5a, #4a4a6a);
-    padding: 2rem;
-    margin: 1rem 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
+/* Profile Section */
 .profile {
     text-align: center;
     margin-bottom: 2rem;
@@ -62,125 +24,64 @@ nav ul li a:hover {
 
 .profile-photo {
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 120px;  /* Increased size */
+    height: 120px;
     object-fit: cover;
     border: 4px solid #ff6b6b;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .profile-photo:hover {
     transform: scale(1.1);
 }
 
-.tagline {
-    font-size: 1.2rem;
-    color: #ff6b6b;
-    margin-top: 10px;
+/* Enlarged Image Modal */
+#imageModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
 }
 
-.social-links {
-    margin-top: 20px;
-}
-
-.btn-linkedin, .btn-resume {
-    display: inline-block;
-    margin: 0 10px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #ffffff;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-linkedin {
-    background-color: #0077b5;
-}
-
-.btn-resume {
-    background-color: #ff6b6b;
-}
-
-.btn-linkedin:hover, .btn-resume:hover {
-    background-color: #005f8a;
-    transform: translateY(-3px);
-}
-
-.experience-item, .education-item {
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    background: #2a2a40;
+#modalImage {
+    max-width: 90%;
+    max-height: 90%;
     border-radius: 10px;
-    transition: transform 0.3s ease;
 }
 
-.experience-item:hover, .education-item:hover {
-    transform: translateY(-5px);
+#closeModal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
 }
 
-.experience-item h3, .education-item h3 {
-    color: #ff6b6b;
-}
-
-.certification-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.certification-item {
-    text-align: center;
-    margin: 1rem;
-    padding: 1rem;
-    background: #2a2a40;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.certification-item:hover {
-    transform: translateY(-5px);
-}
-
+/* Certification Section */
 .certification-item img {
-    width: 60px;
+    width: 100px;  /* Increased size */
     height: auto;
     border-radius: 10px;
     border: 2px solid #ff6b6b;
-}
-
-.certification-title {
-    color: #ff6b6b;
-    font-size: 1.2rem;
-    margin: 10px 0;
-}
-
-.certification-description {
-    font-size: 0.9rem;
-    color: #ddd;
-}
-
-footer {
-    background: #0f0f1a;
-    color: #ffffff;
-    text-align: center;
-    padding: 1rem 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    cursor: pointer;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+    .profile-photo {
+        width: 100px;
+        height: 100px;
     }
 
-    .certification-grid {
-        flex-direction: column;
-    }
-
-    .certification-item {
-        margin: 1rem 0;
+    .certification-item img {
+        width: 80px;
     }
 }
