@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shravan Pandey - Professional Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section-dark">
+        <div class="profile">
+            <img src="profile.jpg" alt="Shravan Pandey" class="profile-photo">
+            <h1>Shravan Pandey</h1>
+            <p class="tagline">Branch Credit Manager | Home Loan & Mortgage Underwriting | Credit Risk & Portfolio Management Expert</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/shravanpandey70" target="_blank" class="btn-linkedin">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="SHRAVAN_CPG_CV.pdf" target="_blank" class="btn-resume">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+        <div class="summary">
+            <h2>Summary</h2>
+            <p>With over four years of experience in home loans, loan against property, and mortgage underwriting, I specialize in data-driven credit assessment to enhance loan approval processes and portfolio quality while ensuring strict compliance with RBI and NBFC regulations. Currently, at JM Housing Finance Ltd., I play a pivotal role in evaluating and managing loan portfolios, streamlining credit operations, and implementing risk mitigation strategies.</p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section-light">
+        <h2>Experience</h2>
+        <div class="experience-item">
+            <h3>Branch Credit Manager</h3>
+            <p><strong>JM Housing Finance Ltd.</strong> | Nov 2024 - Present</p>
+            <ul>
+                <li>Evaluate and underwrite home loan (HL) and loan against property (LAP) credit proposals, ensuring compliance with RBI and NBFC risk assessment frameworks.</li>
+                <li>Reduced loan approval turnaround time by 30% through process automation and credit evaluation improvements.</li>
+                <li>Managed a ₹5 crore loan portfolio, ensuring timely repayments and strong asset quality.</li>
+            </ul>
+        </div>
+        <div class="experience-item">
+            <h3>Credit Manager</h3>
+            <p><strong>Sammaan Capital Limited</strong> | Dec 2023 - Nov 2024</p>
+            <ul>
+                <li>Developed and implemented data-driven risk management frameworks, reducing NPA by 60%.</li>
+                <li>Optimized credit underwriting processes, increasing loan approval efficiency by 30%.</li>
+            </ul>
+        </div>
+        <div class="experience-item">
+            <h3>Assistant Credit Manager</h3>
+            <p><strong>ICICI Bank</strong> | Oct 2021 - Dec 2023</p>
+            <ul>
+                <li>Implemented AI-driven fraud detection systems, reducing high-risk lending cases by 50%.</li>
+                <li>Improved home loan portfolio quality by 30%, contributing to a stronger financial risk profile for the bank.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section-dark">
+        <h2>Education</h2>
+        <div class="education-item">
+            <h3>Awadhesh Pratap Singh University (APSU), Rewa</h3>
+            <p>Bachelor of Commerce (B.Com.) | Specialization in Credit Underwriting & Finance | July 2019 - May 2022</p>
+        </div>
+        <div class="education-item">
+            <h3>Chanakya Public Sr. Sec. School, Satna</h3>
+            <p>High School | Accounting, Business Studies, Macro Economics with Computer Science | April 2012 - May 2019</p>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section-light">
+        <h2>Certifications</h2>
+        <div class="certification-grid">
+            <div class="certification-item">
+                <img src="certificate1.jpg" alt="Business Analysis Basics Certificate">
+                <h3 class="certification-title">Business Analysis Basics</h3>
+                <p><strong>Simplilearn Skill-Up | December 2024</strong></p>
+                <p class="certification-description">
+                    Learned about SWOT analysis, process modeling, and requirement gathering techniques. This certification helped me streamline credit risk assessment and improve decision-making processes in mortgage underwriting.
+                </p>
+            </div>
+            <div class="certification-item">
+                <img src="certificate2.jpg" alt="Credit Analysis Certificate">
+                <h3 class="certification-title">Basics of Credit Analysis in Banking</h3>
+                <p><strong>Great Learning Academy | December 2024</strong></p>
+                <p class="certification-description">
+                    Gained insights into financial statements, liquidity, solvency, and profitability ratios. This certification enhanced my ability to evaluate creditworthiness and make informed lending decisions.
+                </p>
+            </div>
+            <div class="certification-item">
+                <img src="certificate3.jpg" alt="Corporate Agent Certificate">
+                <h3 class="certification-title">Licensing of Corporate Agents</h3>
+                <p><strong>Insurance Institute of India | Valid Until January 2026</strong></p>
+                <p class="certification-description">
+                    Understood insurance regulations and underwriting principles. This certification helped me cross-sell insurance products to loan customers, adding value to my role as a credit manager.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-dark">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:credit.shravanpandey@gmail.com">credit.shravanpandey@gmail.com</a></p>
+        <p>Phone: +91 6266672503</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Shravan Pandey. All rights reserved.</p>
+    </footer>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
