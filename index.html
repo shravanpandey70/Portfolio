@@ -3,32 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shravan Pandey - Professional Portfolio</title>
+    <title>Shravan Pandey - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Cover Image -->
-    <header>
-        <img src="cover.jpg" alt="Cover Photo" class="cover-image">
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="section-dark">
-        <div class="profile">
-            <img src="profile.jpg" alt="Shravan Pandey" class="profile-photo enlarge">
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <img src="profile.jpg" alt="Shravan Pandey" class="profile-photo">
             <h1>Shravan Pandey</h1>
-            <p class="tagline">Branch Credit Manager | Home Loan & Mortgage Underwriting | Credit Risk & Portfolio Management Expert</p>
+            <p>Branch Credit Manager | Mortgage Underwriting | Credit Risk</p>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/shravanpandey70" target="_blank" class="btn-linkedin">
                     <i class="fab fa-linkedin"></i> LinkedIn
@@ -40,25 +26,33 @@
         </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Experienced credit manager with a strong background in home loans, mortgage underwriting, and risk analysis.</p>
+    </section>
+
     <!-- Certifications Section -->
-    <section id="certifications" class="section-light">
+    <section id="certifications">
         <h2>Certifications</h2>
         <div class="certification-grid">
             <div class="certification-item">
-                <img src="certificate1.jpg" alt="Business Analysis Basics Certificate" class="enlarge">
-                <h3 class="certification-title">Business Analysis Basics</h3>
-                <p><strong>Simplilearn Skill-Up | December 2024</strong></p>
+                <img src="certificate1.jpg" alt="Business Analysis Basics" class="clickable">
+                <h3>Business Analysis Basics</h3>
             </div>
             <div class="certification-item">
-                <img src="certificate2.jpg" alt="Credit Analysis Certificate" class="enlarge">
-                <h3 class="certification-title">Basics of Credit Analysis in Banking</h3>
-                <p><strong>Great Learning Academy | December 2024</strong></p>
+                <img src="certificate2.jpg" alt="Credit Analysis Certificate" class="clickable">
+                <h3>Basics of Credit Analysis</h3>
+            </div>
+            <div class="certification-item">
+                <img src="certificate3.jpg" alt="Corporate Agent Certificate" class="clickable">
+                <h3>Corporate Agent Licensing</h3>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-dark">
+    <section id="contact">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:credit.shravanpandey@gmail.com">credit.shravanpandey@gmail.com</a></p>
         <p>Phone: +91 6266672503</p>
@@ -69,33 +63,18 @@
         <p>&copy; 2025 Shravan Pandey. All rights reserved.</p>
     </footer>
 
-    <!-- Image Enlargement Modal -->
-    <div id="imageModal">
-        <span id="closeModal">&times;</span>
-        <img id="modalImage">
-    </div>
-
-    <!-- JavaScript -->
+    <!-- JavaScript for Image Zoom -->
     <script>
-        document.querySelectorAll('.enlarge').forEach(img => {
-            img.addEventListener('click', function () {
-                const modal = document.getElementById("imageModal");
-                const modalImg = document.getElementById("modalImage");
-                modal.style.display = "flex";
-                modalImg.src = this.src;
-            });
-        });
-
-        document.getElementById("closeModal").addEventListener("click", function () {
-            document.getElementById("imageModal").style.display = "none";
-        });
-
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                targetSection.scrollIntoView({ behavior: 'smooth' });
+        document.querySelectorAll('.clickable').forEach(img => {
+            img.addEventListener('click', function() {
+                let modal = document.createElement('div');
+                modal.classList.add('modal');
+                modal.innerHTML = `<div class="modal-content">
+                                      <span class="close">&times;</span>
+                                      <img src="${this.src}" alt="Zoomed Image">
+                                   </div>`;
+                document.body.appendChild(modal);
+                modal.querySelector('.close').addEventListener('click', () => modal.remove());
             });
         });
     </script>
