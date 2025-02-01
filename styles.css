@@ -62,8 +62,8 @@ nav ul li a:hover {
 
 .profile-photo {
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     border: 4px solid #ff6b6b;
     transition: transform 0.3s ease;
@@ -142,10 +142,15 @@ nav ul li a:hover {
 }
 
 .certification-item img {
-    width: 60px;
+    width: 150px;
     height: auto;
     border-radius: 10px;
     border: 2px solid #ff6b6b;
+    transition: transform 0.3s ease;
+}
+
+.certification-item img:hover {
+    transform: scale(1.1);
 }
 
 .certification-title {
