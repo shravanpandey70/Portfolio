@@ -1,26 +1,63 @@
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: #fff;
-    background: #1e1e2f;
-    text-align: center;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    color: #ffffff;
 }
 
-/* Hero Section */
-#hero {
-    background: url('cover.jpg') center/cover no-repeat;
-    padding: 4rem 0;
+header {
+    background: #0f0f1a;
+    padding: 1rem 0;
     text-align: center;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.hero-content {
-    background: rgba(0, 0, 0, 0.7);
-    display: inline-block;
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6b6b;
+}
+
+.section-dark {
+    background: linear-gradient(135deg, #2a2a40, #3a3a5a);
     padding: 2rem;
+    margin: 1rem 0;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section-light {
+    background: linear-gradient(135deg, #3a3a5a, #4a4a6a);
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .profile-photo {
@@ -36,106 +73,119 @@ body {
     transform: scale(1.1);
 }
 
+.tagline {
+    font-size: 1.2rem;
+    color: #ff6b6b;
+    margin-top: 10px;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
 .btn-linkedin, .btn-resume {
     display: inline-block;
-    margin: 10px;
+    margin: 0 10px;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    font-weight: bold;
-    transition: transform 0.3s ease;
+    color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-linkedin {
     background-color: #0077b5;
-    color: white;
 }
 
 .btn-resume {
     background-color: #ff6b6b;
-    color: white;
 }
 
 .btn-linkedin:hover, .btn-resume:hover {
+    background-color: #005f8a;
     transform: translateY(-3px);
 }
 
-/* Sections */
-section {
-    padding: 2rem;
-    margin: 1rem auto;
+.experience-item, .education-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
     background: #2a2a40;
     border-radius: 10px;
-    width: 80%;
+    transition: transform 0.3s ease;
 }
 
-h2 {
+.experience-item:hover, .education-item:hover {
+    transform: translateY(-5px);
+}
+
+.experience-item h3, .education-item h3 {
     color: #ff6b6b;
 }
 
-/* Certifications */
 .certification-grid {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
 .certification-item {
-    background: #3a3a5a;
-    padding: 10px;
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+    background: #2a2a40;
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
 .certification-item:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
 }
 
 .certification-item img {
-    width: 100px;
-    cursor: pointer;
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #ff6b6b;
+    transition: transform 0.3s ease;
 }
 
-/* Contact */
-#contact {
-    background: #0f0f1a;
+.certification-item img:hover {
+    transform: scale(1.1);
+}
+
+.certification-title {
+    color: #ff6b6b;
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.certification-description {
+    font-size: 0.9rem;
+    color: #ddd;
 }
 
 footer {
     background: #0f0f1a;
-    padding: 1rem;
+    color: #ffffff;
     text-align: center;
-}
-
-/* Modal for Image Zoom */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
+    padding: 1rem 0;
     position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-.modal img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
 
-.close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
+    .certification-grid {
+        flex-direction: column;
+    }
+
+    .certification-item {
+        margin: 1rem 0;
+    }
 }
