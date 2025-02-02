@@ -8,38 +8,33 @@ body {
     color: #ffffff;
 }
 
-/* Cover Image */
+/* Cover Image & Profile Photo Fixes */
 .cover-wrapper {
+    position: relative;
     width: 100%;
-    height: 300px; /* Adjust height if needed */
-    overflow: hidden; /* Remove cropping */
-    position: relative; /* For positioning the profile photo */
-}
-
-.cover-container {
-    width: 100%;
-    height: 100%;
+    height: 350px; /* Adjusted to fit full cover content */
+    background: #2a2a40; /* Fallback if image has space */
+    overflow: visible; /* Remove cropping */
+    margin-bottom: 20px; /* Space for profile photo */
 }
 
 .cover-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the cover image fills the container */
+    object-fit: cover; /* Fill cover area without distortion */
 }
 
-/* Profile Photo (Square) */
 .profile-photo-container {
     position: absolute;
-    bottom: -150px; /* Adjust to show full photo */
-    left: 20px; /* Left alignment */
-    z-index: 1001;
-    width: 200px;
+    bottom: -180px; /* Pull photo downward to show full hair */
+    left: 30px; /* Left alignment */
+    z-index: 1001; /* Ensure it's above other content */
 }
 
 .profile-photo {
-    border-radius: 10px; /* Square with slightly rounded corners */
-    width: 200px;
-    height: 250px; /* Vertical rectangle shape */
+    border-radius: 10px; /* Square with rounded corners */
+    width: 220px; /* Larger size */
+    height: 280px; /* Vertical rectangle */
     object-fit: cover; /* Show full photo without cropping */
     border: 4px solid #ff6b6b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -57,7 +52,7 @@ header {
     text-align: center;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Below profile photo */
 }
 
 nav ul {
@@ -214,7 +209,7 @@ footer {
     width: 100%;
 }
 
-/* Responsive Design */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     nav ul li {
         display: block;
@@ -229,18 +224,18 @@ footer {
         margin: 1rem 0;
     }
 
+    .cover-wrapper {
+        height: 280px; /* Smaller cover height for mobile */
+    }
+
     .profile-photo-container {
         left: 50%;
         transform: translateX(-50%); /* Center on mobile */
-        bottom: -120px;
+        bottom: -150px;
     }
 
     .profile-photo {
-        width: 150px;
-        height: 180px; /* Adjust for mobile */
-    }
-
-    .cover-wrapper {
-        height: 250px; /* Reduce cover height on mobile */
+        width: 180px;
+        height: 220px; /* Adjust for mobile */
     }
 }
