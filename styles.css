@@ -8,12 +8,11 @@ body {
     color: #ffffff;
 }
 
-/* Cover Image and Profile Photo */
+/* Cover Image */
 .cover-container {
-    position: relative;
     width: 100%;
     height: 300px;
-    overflow: hidden;
+    overflow: hidden; /* Crop the cover image */
 }
 
 .cover-image img {
@@ -22,21 +21,23 @@ body {
     object-fit: cover;
 }
 
+/* Profile Photo */
 .profile-photo-container {
-    position: absolute;
-    bottom: -50px; /* Move the photo upward to show more */
-    left: 20px; /* Position on the left side */
-    text-align: center;
+    position: relative; /* Relative to the document flow */
+    margin-top: -100px; /* Pull the photo upward into the cover area */
+    margin-left: 20px; /* Position on the left side */
+    z-index: 1000; /* Ensure it's above the cover image */
+    width: 200px;
 }
 
 .profile-photo {
-    border-radius: 50%; /* Make it circular */
-    width: 200px; /* Adjust size as needed */
+    border-radius: 50%; /* Circular shape */
+    width: 200px;
     height: 200px;
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    object-fit: cover;
     border: 4px solid #ff6b6b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
 .profile-photo:hover {
@@ -223,13 +224,13 @@ footer {
     }
 
     .profile-photo-container {
-        left: 50%;
+        margin-left: 50%; /* Center on mobile */
         transform: translateX(-50%);
-        bottom: -30px; /* Adjust for smaller screens */
+        width: 150px;
     }
 
     .profile-photo {
-        width: 150px; /* Slightly smaller on mobile */
+        width: 150px;
         height: 150px;
     }
 }
