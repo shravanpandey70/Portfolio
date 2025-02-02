@@ -8,33 +8,39 @@ body {
     color: #ffffff;
 }
 
+/* Cover Image & Profile Photo Wrapper */
+.cover-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Match cover image height */
+}
+
 /* Cover Image */
 .cover-container {
     width: 100%;
     height: 300px;
-    overflow: hidden; /* Crop the cover image */
+    overflow: hidden;
 }
 
-.cover-image img {
+.cover-image {
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
 }
 
 /* Profile Photo */
 .profile-photo-container {
-    position: relative; /* Relative to the document flow */
-    margin-top: -100px; /* Pull the photo upward into the cover area */
-    margin-left: 20px; /* Position on the left side */
-    z-index: 1000; /* Ensure it's above the cover image */
-    width: 200px;
+    position: absolute;
+    bottom: -50px; /* Adjust to show full photo */
+    left: 20px; /* Position on the left side */
+    z-index: 1001; /* Above the header */
 }
 
 .profile-photo {
     border-radius: 50%; /* Circular shape */
     width: 200px;
     height: 200px;
-    object-fit: cover;
+    object-fit: cover; /* Show full image without cropping */
     border: 4px solid #ff6b6b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
@@ -44,14 +50,14 @@ body {
     transform: scale(1.1);
 }
 
-/* Header Section */
+/* Header */
 header {
     background: #0f0f1a;
     padding: 1rem 0;
     text-align: center;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Below profile photo */
 }
 
 nav ul {
@@ -224,9 +230,9 @@ footer {
     }
 
     .profile-photo-container {
-        margin-left: 50%; /* Center on mobile */
-        transform: translateX(-50%);
-        width: 150px;
+        left: 50%;
+        transform: translateX(-50%); /* Center on mobile */
+        bottom: -30px;
     }
 
     .profile-photo {
