@@ -8,6 +8,14 @@ body {
     color: #ffffff;
 }
 
+/* Cover Image */
+.cover-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 4px solid #ff6b6b;
+}
+
 header {
     background: #0f0f1a;
     padding: 1rem 0;
