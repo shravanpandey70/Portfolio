@@ -25,8 +25,7 @@ body {
 .profile-photo-container {
     position: absolute;
     bottom: -50px; /* Adjust vertical position to show more of the photo */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center horizontally */
+    left: 20px; /* Position on the left side of the cover */
     text-align: center;
 }
 
@@ -224,6 +223,8 @@ footer {
     }
 
     .profile-photo-container {
+        left: 50%;
+        transform: translateX(-50%);
         bottom: -30px; /* Adjust for smaller screens */
     }
 
