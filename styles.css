@@ -24,8 +24,8 @@ body {
 
 .profile-photo-container {
     position: absolute;
-    bottom: -50px; /* Adjust vertical position to show more of the photo */
-    left: 20px; /* Position on the left side of the cover */
+    bottom: -50px; /* Move the photo upward to show more */
+    left: 20px; /* Position on the left side */
     text-align: center;
 }
 
