@@ -8,43 +8,6 @@ body {
     color: #ffffff;
 }
 
-/* Cover Image & Profile Photo Fixes */
-.cover-wrapper {
-    position: relative;
-    width: 100%;
-    height: 350px; /* Adjusted to fit full cover content */
-    background: #2a2a40; /* Fallback if image has space */
-    overflow: hidden; /* Prevent cropping */
-    margin-bottom: 0; /* Remove space below cover */
-}
-
-.cover-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Fill cover area without distortion */
-}
-
-.profile-photo-container {
-    position: absolute;
-    bottom: -150px; /* Pull photo upward to overlap cover */
-    left: 30px; /* Left alignment */
-    z-index: 1001; /* Ensure it's above other content */
-}
-
-.profile-photo {
-    border-radius: 10px; /* Square with rounded corners */
-    width: 220px; /* Larger size */
-    height: 280px; /* Vertical rectangle */
-    object-fit: cover; /* Show full photo without cropping */
-    border: 4px solid #ff6b6b;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.profile-photo:hover {
-    transform: scale(1.05);
-}
-
 /* Header */
 header {
     background: #0f0f1a;
@@ -52,7 +15,7 @@ header {
     text-align: center;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Below profile photo */
+    z-index: 1000;
 }
 
 nav ul {
@@ -81,7 +44,7 @@ nav ul li a:hover {
 .section-dark {
     background: linear-gradient(135deg, #2a2a40, #3a3a5a);
     padding: 2rem;
-    margin: 0; /* Remove margin to eliminate space */
+    margin: 0;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -89,7 +52,7 @@ nav ul li a:hover {
 .section-light {
     background: linear-gradient(135deg, #3a3a5a, #4a4a6a);
     padding: 2rem;
-    margin: 0; /* Remove margin to eliminate space */
+    margin: 0;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -222,20 +185,5 @@ footer {
 
     .certification-item {
         margin: 1rem 0;
-    }
-
-    .cover-wrapper {
-        height: 280px; /* Smaller cover height for mobile */
-    }
-
-    .profile-photo-container {
-        left: 50%;
-        transform: translateX(-50%); /* Center on mobile */
-        bottom: -120px;
-    }
-
-    .profile-photo {
-        width: 180px;
-        height: 220px; /* Adjust for mobile */
     }
 }
